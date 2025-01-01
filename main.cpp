@@ -2,11 +2,17 @@
 
 #include <QApplication>
 #include <QLocale>
+#include <QFile>
 #include <QTranslator>
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+
+    QFile styleFile(":/theme/Darkeum.qss");
+    styleFile.open(QFile::ReadOnly);
+    QString style(styleFile.readAll());
+    a.setStyleSheet(style);
 
     QTranslator translator;
     const QStringList uiLanguages = QLocale::system().uiLanguages();
@@ -17,6 +23,8 @@ int main(int argc, char *argv[])
             break;
         }
     }
+
+
     MainWindow w;
     w.setWindowTitle("ScorpText");
 
