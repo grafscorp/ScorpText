@@ -10,8 +10,8 @@
 #include <QList>
 #include <tabtextedit.h>
 #include <QTreeWidget>
-
-#include "filemanager.h"
+#include <openedFilesManger.h>
+#include <filemanager.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -32,9 +32,12 @@ private slots:
 
     void on_treeWidget_itemClicked(QTreeWidgetItem *item, int column);
 
+    void on_tabWidget_currentChanged(int index);
+
 private:
     Ui::MainWindow *ui;
-    filemanager fManager;
+    FManager openFilesManager;
+    filemanager fileManager;
     void clearTabWidget();
     void updateTabWidget();
 
@@ -47,6 +50,7 @@ private:
     void openFile(QString);
     void saveFile();
     void saveFileAs();
+    void openFolder();
 
 
 };
