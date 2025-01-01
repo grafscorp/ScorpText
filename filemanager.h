@@ -1,6 +1,8 @@
 #ifndef FILEMANAGER_H
 #define FILEMANAGER_H
 #include <QString>
+#include <QList>
+#include <QDir>
 #include <map>
 
 class filemanager
@@ -20,6 +22,8 @@ public:
     QString getFileNameFromDir(QString);
     QString getFilePathFromDir(QString);
     QString getDirFile(QString);
+
+    QList<QString> getAllFilesFroomDir(QString);
 };
 
 #endif // FILEMANAGER_H

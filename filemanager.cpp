@@ -53,6 +53,20 @@ QString filemanager::getDirFile(QString fileName)
     return openedFiles.at(fileName) +"/"+fileName;
 }
 
+QList<QString> filemanager::getAllFilesFroomDir(QString path)
+{
+    QList<QString> files;
+    QDir dir(path);
+    foreach (QFileInfo item, dir.entryInfoList() )
+    {
+        if(item.isFile())
+        {
+            files.append(item.fileName());
+        }
+    }
+    return files;
+}
+
 
 
 QString filemanager::getFileNameFromDir(QString fileDir)
