@@ -9,6 +9,8 @@
 #include <QTextEdit>
 #include <QList>
 #include <tabtextedit.h>
+#include <QTreeWidget>
+
 #include "filemanager.h"
 
 QT_BEGIN_NAMESPACE
@@ -28,6 +30,8 @@ public:
 private slots:
     void on_tabWidget_tabCloseRequested(int index);
 
+    void on_treeWidget_itemClicked(QTreeWidgetItem *item, int column);
+
 private:
     Ui::MainWindow *ui;
     filemanager fManager;
@@ -36,9 +40,11 @@ private:
 
     QString getTextFromTab(int);
 
+    void clearTreeWidget();
+    void openTreeWidget(QString);
     //File actions
     void openNewFile();
-    void openFile();
+    void openFile(QString);
     void saveFile();
     void saveFileAs();
 
