@@ -13,15 +13,11 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="windowIcon">
+   <iconset theme="QIcon::ThemeIcon::EditCopy"/>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QHBoxLayout" name="horizontalLayout">
-    <item>
-     <widget class="Line" name="line">
-      <property name="orientation">
-       <enum>Qt::Orientation::Vertical</enum>
-      </property>
-     </widget>
-    </item>
     <item>
      <widget class="QTreeWidget" name="treeWidget">
       <property name="sizePolicy">
@@ -39,6 +35,18 @@
       <property name="itemsExpandable">
        <bool>true</bool>
       </property>
+      <attribute name="headerCascadingSectionResizes">
+       <bool>false</bool>
+      </attribute>
+      <attribute name="headerMinimumSectionSize">
+       <number>20</number>
+      </attribute>
+      <attribute name="headerDefaultSectionSize">
+       <number>100</number>
+      </attribute>
+      <attribute name="headerHighlightSections">
+       <bool>false</bool>
+      </attribute>
       <column>
        <property name="text">
         <string>D://Meow/</string>
@@ -110,7 +118,7 @@
     <addaction name="actionOpen"/>
     <addaction name="actionSave"/>
     <addaction name="actionSave_as"/>
-    <addaction name="separator"/>
+    <addaction name="actionOpen_Folder"/>
    </widget>
    <widget class="QMenu" name="menuEdit">
     <property name="title">
@@ -144,7 +152,7 @@
   </action>
   <action name="actionOpen">
    <property name="text">
-    <string>Open</string>
+    <string>Open...</string>
    </property>
   </action>
   <action name="actionSave">
@@ -154,7 +162,7 @@
   </action>
   <action name="actionSave_as">
    <property name="text">
-    <string>Save as</string>
+    <string>Save as...</string>
    </property>
   </action>
   <action name="actionUndo">
@@ -175,6 +183,11 @@
   <action name="actionAbout_QT">
    <property name="text">
     <string>About QT</string>
+   </property>
+  </action>
+  <action name="actionOpen_Folder">
+   <property name="text">
+    <string>Open Folder...</string>
    </property>
   </action>
  </widget>
