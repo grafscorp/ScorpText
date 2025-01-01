@@ -12,11 +12,15 @@ SOURCES += \
     filemanager.cpp \
     main.cpp \
     mainwindow.cpp \
+    openedFilesManger.cpp \
+    openedfile.cpp \
     tabtextedit.cpp
 
 HEADERS += \
     filemanager.h \
     mainwindow.h \
+    openedFilesManger.h \
+    openedfile.h \
     tabtextedit.h
 
 FORMS += \
@@ -32,3 +36,6 @@ CONFIG += embed_translations
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    resources.qrc
