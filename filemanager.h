@@ -2,28 +2,21 @@
 #define FILEMANAGER_H
 #include <QString>
 #include <QList>
+#include <QFileInfo>
 #include <QDir>
-#include <map>
+#include <QMap>
 
 class filemanager
 {
 public:
     filemanager();
-    //Filename, Filepath
-    std::map<QString, QString> openedFiles={};
-    void clearOpenedFiles();
-    void deleteOpenedFile(QString);
-    size_t getSizeOpenedFiles();
-    //Returned key
-    QString getNameFileByIndex(int);
-    //add file to vector(FileName, FilePath)
-    void addFile(QString, QString);
-    void addFileFromFilePath(QString);
+
     QString getFileNameFromDir(QString);
     QString getFilePathFromDir(QString);
-    QString getDirFile(QString);
 
     QList<QString> getAllFilesFroomDir(QString);
+    //Check directory, if is file return true
+    bool isFile(QString dir);
 };
 
 #endif // FILEMANAGER_H
