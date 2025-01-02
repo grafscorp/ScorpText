@@ -42,9 +42,11 @@ QString FManager::setUniqFileDisplayName(QString dName, int index )
 {
     if (getIndexOfDisplayName(dName) == -1)
     {
-        if (index == 1) return dName;
-        else return dName +"("+ QString::number(index) + ")";
+        // if (index == 1) return dName;
+        // else return dName +"("+ QString::number(index) + ")";
+        return dName;
     }
+    dName = dName + "("+ QString::number(index) + ")";
     return setUniqFileDisplayName(dName, index+1);
 }
 
