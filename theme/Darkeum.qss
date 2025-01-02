@@ -449,8 +449,8 @@ QLineEdit::disabled
 /*-----QTextEdit-----*/
 QTextEdit
 {
-	background-color: #ffffff;
-	color: #010201;
+	background-color: #000000;
+	color: #ffffff;
 	border-color: #051a39;
 
 }
