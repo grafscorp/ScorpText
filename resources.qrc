@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>icons/docs.png</file>
+        <file>icons/folder.png</file>
+        <file>icons/folder_empty.png</file>
+        <file>theme/Darkeum.qss</file>
+    </qresource>
+    <qresource prefix="/theme"/>
+</RCC>
