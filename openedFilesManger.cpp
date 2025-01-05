@@ -37,16 +37,15 @@ void FManager::addElement(QString name , QString path)
     openedFilesList.append(newFile);
 }
 
-
+//Test
 QString FManager::setUniqFileDisplayName(QString dName, int index )
 {
-    if (getIndexOfDisplayName(dName) == -1)
+    if (getIndexOfDisplayName(dName+ "("+ QString::number(index) + ")") == -1)
     {
         // if (index == 1) return dName;
         // else return dName +"("+ QString::number(index) + ")";
-        return dName;
+        return dName+ "("+ QString::number(index) + ")";
     }
-    dName = dName + "("+ QString::number(index) + ")";
     return setUniqFileDisplayName(dName, index+1);
 }
 
