@@ -40,11 +40,12 @@ void FManager::addElement(QString name , QString path)
 //Test
 QString FManager::setUniqFileDisplayName(QString dName, int index )
 {
-    if (getIndexOfDisplayName(dName+ "("+ QString::number(index) + ")") == -1)
+    QString newDName = dName+ "("+ QString::number(index) + ")";
+    if (getIndexOfDisplayName(newDName) == -1)
     {
         // if (index == 1) return dName;
         // else return dName +"("+ QString::number(index) + ")";
-        return dName+ "("+ QString::number(index) + ")";
+        return newDName;
     }
     return setUniqFileDisplayName(dName, index+1);
 }
